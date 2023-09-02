@@ -1,0 +1,24 @@
+version: "3.7"
+services:
+  web:
+    build: .
+    command: python3 manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+  http:
+    image: steveltn/https-portal:1
+    container_name: http
+    volumes:
+      - ./ssl_certs:/var/lib/https-portal
+    ports:
+      - "80:80"
+      - "443:443"
+    links:
+      - web
+    environment:
+      DOMAINS: "dj-gce.struccle.com -> http://web:8000/"
+      STAGE: "local"  # 本番では => production に変更
+      # 90日に1度の更新を自動化したいなら、下記のコメントアウトを外す
+      # FORCE_RENEW: "true"

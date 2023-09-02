@@ -1,0 +1,13 @@
+prefix=/Users/yamamotorei/Django/dj_GCE/dj_GCE/.conda
+exec_prefix=/Users/yamamotorei/Django/dj_GCE/dj_GCE/.conda
+libdir=/Users/yamamotorei/Django/dj_GCE/dj_GCE/.conda/lib
+sharedlibdir=/Users/yamamotorei/Django/dj_GCE/dj_GCE/.conda/lib
+includedir=/Users/yamamotorei/Django/dj_GCE/dj_GCE/.conda/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
