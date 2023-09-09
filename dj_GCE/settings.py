@@ -21,12 +21,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+
 SECRET_KEY = 'django-insecure-qv8e6d+g7m5)p$2a^fts9-mnm*7pk9wr+_^*lrg58&!!5_0$f)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+DEBUG = False
+CSRF_TRUSTED_ORIGINS = ["https://*.dj-gce.struccle.com"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -125,5 +126,3 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = "signup.User"
-
-

@@ -19,6 +19,6 @@ services:
       - web
     environment:
       DOMAINS: "dj-gce.struccle.com -> http://web:8000/"
-      STAGE: "local"  # 本番では => production に変更
+      STAGE: "production"  # 本番では => production に変更
       # 90日に1度の更新を自動化したいなら、下記のコメントアウトを外す
       # FORCE_RENEW: "true"
